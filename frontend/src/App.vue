@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Kotlin + Spring Boot + Mongo DB + Vue.js CRUD Application</a><br/><br/>
+      <a class="navbar-brand" href="#">ANGGI PRAYOGA : ERDIKHA_VUEJS_SPRING_KOTLIN</a><br/><br/>
     </div>
     <router-view/>
   </div>

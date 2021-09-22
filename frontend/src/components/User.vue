@@ -49,25 +49,23 @@ export default {
   },
   methods: {
     refreshUserDetails() {
-      UserDataService.retrieveUser(this.id).then((res) => {
-        this.firstName = res.data.firstName;
-        this.lastName = res.data.lastName;
-        this.emailId = res.data.emailId;
-      });
+      if(this.id != -1){
+          UserDataService.retrieveUser(this.id).then((res) => {
+            this.firstName = res.data.firstName;
+            this.lastName = res.data.lastName;
+            this.emailId = res.data.emailId;
+          });
+      }
     },
     validateAndSubmit(e) {
       e.preventDefault();
       this.errors = [];
       if (!this.firstName) {
         this.errors.push("Enter valid values");
-      } else if (this.firstName.length < 5) {
-        this.errors.push("Enter atleast 5 characters in First Name");
-      }
+      } 
       if (!this.lastName) {
         this.errors.push("Enter valid values");
-      } else if (this.lastName.length < 5) {
-        this.errors.push("Enter atleast 5 characters in Last Name");
-      }
+      } 
       if (this.errors.length === 0) {
         if (this.id == -1) {
           UserDataService.createUser({
